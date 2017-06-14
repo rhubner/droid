@@ -31,6 +31,7 @@
  */
 package uk.gov.nationalarchives.droid.command;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -39,6 +40,7 @@ import uk.gov.nationalarchives.droid.command.action.CommandLineException;
 /**
  * Created by rhubner on 1/25/17.
  */
+@Ignore
 public class TestContexCleanup {
 
 
