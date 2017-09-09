@@ -2,26 +2,10 @@ version: '{build}'
 os: Windows Server 2012
 skip_tags: true
 clone_depth: 10
-#init:
-#  - git config --global core.autocrlf false
-install:
-  - ps: |
-      Add-Type -AssemblyName System.IO.Compression.FileSystem
-      if (!(Test-Path -Path "C:\maven" )) {
-        (new-object System.Net.WebClient).DownloadFile(
-          'http://www.us.apache.org/dist/maven/maven-3/3.2.5/binaries/apache-maven-3.2.5-bin.zip',
-          'C:\maven-bin.zip'
-        )
-        [System.IO.Compression.ZipFile]::ExtractToDirectory("C:\maven-bin.zip", "C:\maven")
-      }
-#  - cmd: SET PATH=C:\maven\apache-maven-3.2.5\bin;%JAVA_HOME%\bin;%PATH
-  - cmd: SET MAVEN_OPTS=-Xmx4g
-  - cmd: SET JAVA_OPTS=-Xmx4g
-#  - cmd: SET M2_HOME=C:\maven\apache-maven-3.2.5
+init:
+  - cmd: SET MAVEN_OPTS=-Xmx3g
+  - cmd: SET JAVA_OPTS=-Xmx3g
 build_script:
   - mvn clean package --batch-mode -DskipTest -Dmaven.test.skip=true -Dcheckstyle.skip=true
 test_script:
   - mvn clean install --batch-mode -Dcheckstyle.skip=true
-cache:
-  - C:\maven\
-  - C:\Users\appveyor\.m2
