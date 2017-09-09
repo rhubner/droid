@@ -3,6 +3,7 @@ os: Windows Server 2012
 skip_tags: true
 clone_depth: 10
 init:
+  - git config --global core.autocrlf true
   - cmd: SET MAVEN_OPTS=-Xmx3g
   - cmd: SET JAVA_OPTS=-Xmx3g
 build_script:
