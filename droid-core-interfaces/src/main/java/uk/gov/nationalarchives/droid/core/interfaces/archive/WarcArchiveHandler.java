@@ -40,6 +40,8 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.Date;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.jwat.warc.WarcHeader;
 import org.jwat.warc.WarcReader;
 import org.jwat.warc.WarcReaderFactory;
@@ -61,6 +63,8 @@ public class WarcArchiveHandler extends WebArchiveHandler implements ArchiveHand
      * Used to generate URIs within Warc file
      */
     protected static final String WEB_ARCHIVE_TYPE = "warc";
+
+    private static final Logger LOG = LoggerFactory.getLogger(ArcArchiveHandler.class);
 
     /**
      * {@inheritDoc}
@@ -104,7 +108,7 @@ public class WarcArchiveHandler extends WebArchiveHandler implements ArchiveHand
                 WarcReader warcReader = WarcReaderFactory.getReader(in);
                 this.iterator = warcReader.iterator();
             } catch (IOException e) {
-                LOGGER.error(e);
+                LOG.error("warc iterator error IO : ", e);
                 System.err.println(e);
             }
         }

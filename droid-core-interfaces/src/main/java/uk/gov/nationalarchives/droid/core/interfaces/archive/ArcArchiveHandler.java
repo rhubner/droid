@@ -40,6 +40,9 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.Date;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import org.jwat.arc.ArcReader;
 import org.jwat.arc.ArcReaderFactory;
 import org.jwat.arc.ArcRecord;
@@ -62,6 +65,8 @@ public class ArcArchiveHandler extends WebArchiveHandler implements ArchiveHandl
      * Used to generate URIs within Arc file
      */
     protected static final String WEB_ARCHIVE_TYPE = "arc";
+
+    private static final Logger LOG = LoggerFactory.getLogger(ArcArchiveHandler.class);
 
     /**
      * {@inheritDoc}
@@ -104,7 +109,7 @@ public class ArcArchiveHandler extends WebArchiveHandler implements ArchiveHandl
                 ArcReader arcReader = ArcReaderFactory.getReader(in);
                 this.iterator = arcReader.iterator();
             } catch (IOException e) {
-                LOGGER.error(e);
+                LOG.error("Arc iteration IO error : ", e);
                 System.err.println(e);
             }
         }

@@ -39,8 +39,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import uk.gov.nationalarchives.droid.core.interfaces.AsynchDroid;
 import uk.gov.nationalarchives.droid.core.interfaces.IdentificationRequest;
@@ -63,7 +63,7 @@ public abstract class WebArchiveHandler {
     /**
      * Get the log to be shared by all instances of this class.
      */
-    protected static final Log LOGGER = LogFactory.getLog(WebArchiveHandler.class);
+    private final Logger log = LoggerFactory.getLogger(this.getClass());
 
     private AsynchDroid droidCore;
     private IdentificationRequestFactory factory;

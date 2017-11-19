@@ -42,8 +42,6 @@ import net.byteseek.io.reader.WindowReader;
 
 //CHECKSTYLE:OFF - getting wrong import order - no idea why.
 import org.apache.commons.io.FilenameUtils;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 //CHECKSTYLE:ON
 
 import uk.gov.nationalarchives.droid.core.interfaces.IdentificationRequest;
@@ -64,8 +62,6 @@ public class GZipIdentificationRequest implements IdentificationRequest<InputStr
     private RequestMetaData requestMetaData;
     private final RequestIdentifier identifier;
     private WindowReader reader;
-    
-    private Log log = LogFactory.getLog(this.getClass());
     
     /**
      * Constructs a new GZip file resource.

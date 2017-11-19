@@ -36,8 +36,9 @@ import java.util.Set;
 
 import org.apache.commons.configuration.event.ConfigurationEvent;
 import org.apache.commons.configuration.event.ConfigurationListener;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import uk.gov.nationalarchives.droid.core.interfaces.config.DroidGlobalProperty;
 
@@ -48,7 +49,7 @@ import uk.gov.nationalarchives.droid.core.interfaces.config.DroidGlobalProperty;
  */
 public class ProxySettings implements ConfigurationListener {
 
-    private final Log log = LogFactory.getLog(getClass());
+    private final Logger log = LoggerFactory.getLogger(this.getClass());
     
     private String proxyHost;
     private int proxyPort;
