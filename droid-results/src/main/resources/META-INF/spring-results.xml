@@ -55,6 +55,7 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
                 <entry key="7Z" value-ref="sevenZipHandler"/>
                 <entry key="ISO" value-ref="isoHandler" />
                 <entry key="RAR" value-ref="rarHandler" />
+                <entry key="FAT" value-ref="fatHandler" />
             </map>
         </property>
     </bean>
@@ -169,6 +170,11 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
 
     </bean>
 
+    <bean id="fatHandler" class="uk.gov.nationalarchives.droid.core.interfaces.archive.FatArchiveHandler">
+        <property name="droid" ref="submissionGateway" />
+        <property name="resultHandler" ref="databaseResultHandler" />
+    </bean>
+
 
     <bean id="archivePuidResolver" class="uk.gov.nationalarchives.droid.core.interfaces.archive.ArchiveFormatResolverImpl">
         <property name="puids">
@@ -182,6 +188,7 @@ http://www.springframework.org/schema/tx http://www.springframework.org/schema/t
                 <entry key="7Z" value="${archive.7z}"/>
                 <entry key="ISO" value="${archive.iso}" />
                 <entry key="RAR" value="${archive.rar}" />
+                <entry key="FAT" value="fmt/1087" />
             </map>
         </property>
     </bean>

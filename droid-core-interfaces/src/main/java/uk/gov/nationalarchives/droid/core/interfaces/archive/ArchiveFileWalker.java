@@ -32,6 +32,7 @@
 package uk.gov.nationalarchives.droid.core.interfaces.archive;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 
 /**
  * Abstract archive walker which walks archive entries.
