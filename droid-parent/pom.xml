@@ -227,6 +227,11 @@
                         <configuration>
                             <failOnWarning>true</failOnWarning>
                             <ignoreNonCompile>false</ignoreNonCompile>
+                            <ignoredDependencies>
+                                <ignoredDependency>xml-apis:xml-apis</ignoredDependency>
+                                <ignoredDependency>xerces:xmlParserAPIs</ignoredDependency>
+                                <ignoredDependency>javax.xml.bind:jaxb-api</ignoredDependency>
+                            </ignoredDependencies>
                         </configuration>
                     </execution>
                 </executions>
