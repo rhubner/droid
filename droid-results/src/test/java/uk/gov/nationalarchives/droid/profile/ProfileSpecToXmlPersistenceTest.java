@@ -114,7 +114,6 @@ public class ProfileSpecToXmlPersistenceTest {
     }
     
     @Test
-    @Ignore("Until we make serialization of date object deterministic")
     public void testSaveEmptyProfileSpecAsXml() throws Exception {
 
         File file = new File("profiles/untitled-1/profile.xml");
@@ -147,7 +146,6 @@ public class ProfileSpecToXmlPersistenceTest {
     }
 
     @Test
-    @Ignore("Until we make serialization of date object deterministic")
     public void testSaveProfileSpecWithSomeResources() throws Exception {
 
         final Path file = Paths.get("profiles/untitled-1/profile.xml");

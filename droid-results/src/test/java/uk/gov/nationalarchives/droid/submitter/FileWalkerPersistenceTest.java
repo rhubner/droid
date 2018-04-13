@@ -80,7 +80,6 @@ public class FileWalkerPersistenceTest {
     }
     
     @Test
-    @Ignore("Until we make serialization of date object deterministic")
     public void testSaveProfileWithSerializedPofileSpecWalker() throws Exception {
         
         final Path dirResource1 = Paths.get("root/dir");
