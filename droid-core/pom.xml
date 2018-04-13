@@ -59,10 +59,13 @@
             <artifactId>droid-core-interfaces</artifactId>
             <version>${project.version}</version>
         </dependency>
-        <dependency>
-            <groupId>xml-apis</groupId>
-            <artifactId>xml-apis</artifactId>
-        </dependency>
+
+        <!--<dependency>-->
+            <!--<groupId>xml-apis</groupId>-->
+            <!--<artifactId>xml-apis</artifactId>-->
+        <!--</dependency>-->
+
+
         <dependency>
             <groupId>net.byteseek</groupId>
             <artifactId>byteseek</artifactId>
