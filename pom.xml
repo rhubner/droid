@@ -6,7 +6,6 @@
         <version>6.5-SNAPSHOT</version>
         <relativePath>droid-parent</relativePath>
     </parent>
-this will fail buil  
     <artifactId>droid</artifactId>
     <packaging>pom</packaging>
 
